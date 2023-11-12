@@ -1,0 +1,114 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgba(119, 0, 255, 0.753);
+    color: white;
+}
+
+a
+{
+    color: white;
+}
+
+label
+{
+    margin: 5px;
+}
+
+.publi
+{
+    display: inline-block;
+    padding: 30px 100px;
+    border: solid 1px rgb(189, 70, 236);
+    border-radius: 20px;
+}
+
+.formata
+{
+    text-align: center;
+    display: inline-block;
+    padding: 30px;
+    background-color: rgb(147, 0, 206);
+    border-radius: 30px;
+}
+
+.position
+{
+    text-align: center;
+}
+
+.botao
+{
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: rgb(189, 70, 236);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.botao:hover
+{
+    background-color: rgb(164, 0, 230);
+}
+
+.posts
+{
+    background-color: rgb(147, 0, 206);
+    border-radius: 20px;
+    padding: 20px 0px;
+    margin: 0px 30px;
+}
+
+.like
+{
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    padding: 30px;
+    background-color: rgb(189, 70, 236);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    background-image: url(../images/like.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.like:hover
+{
+    background-color: rgb(164, 0, 230);
+}
+
+.likes_quant
+{
+    border: solid 1px rgb(189, 70, 236);
+    border-radius: 10px;
+    margin-left: 45%;
+    padding: 5px 0px;
+    font-weight: bold;
+    width: 10%;
+}
+
+.user
+{
+    text-decoration: underline;
+}
+
+.deletar
+{
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    padding: 30px;
+    background-color: rgb(189, 70, 236);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    background-image: url(../images/deletar.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.deletar:hover
+{
+    background-color: rgb(164, 0, 230);
+}

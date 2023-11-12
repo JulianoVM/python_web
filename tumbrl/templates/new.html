@@ -1,0 +1,31 @@
+{% extends "perry.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="../static/css/register.css">
+{% endblock %}
+
+{% block body %}
+<main>
+    
+    <form method="POST">
+        {{ form.csrf_token }}
+    
+        {{ form.email.label() }}
+        {{ form.email() }}
+    
+        {{ form.usarname.label() }}
+        {{ form.usarname() }}
+    
+        {{ form.password.label() }}
+        {{ form.password() }}
+    
+        {{ form.checkPassword.label() }}
+        {{ form.checkPassword() }}
+
+        <div class="botoes">
+            {{ form.btn(class="botao") }}
+        </div>
+    </form>
+    
+</main>
+{% endblock %}
