@@ -52,6 +52,7 @@ label
 .botao:hover
 {
     background-color: rgb(164, 0, 230);
+    cursor: pointer;
 }
 
 .posts
@@ -78,6 +79,7 @@ label
 .like:hover
 {
     background-color: rgb(164, 0, 230);
+    cursor: pointer;
 }
 
 .likes_quant
@@ -111,4 +113,21 @@ label
 .deletar:hover
 {
     background-color: rgb(164, 0, 230);
+    cursor: pointer;
+}
+
+.menu
+{
+    text-decoration: none;
+    border: 0px;
+    border-radius: 10px;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: rgb(189, 70, 236);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu:hover
+{
+    background-color: rgb(164, 0, 230);   
 }
