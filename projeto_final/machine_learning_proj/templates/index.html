@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final Pyhton</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>Classificadores para frequência de compras de consumidores</h1>    
+
+    <main class="formata">
+        <section>
+            <h2>Escolha o classificador:</h2>
+
+            <div>
+                <form>
+                    <input list="classificadores">
+                    <datalist id="classificadores">
+                        <option value="KNN">
+                        <option value="MLP">
+                        <option value="DT">
+                        <option value="RF">
+                    </datalist>
+                    <input type="submit" value="Escolher">
+                </form>
+
+                <div></div>
+            </div>
+
+            <h2>Métricas:</h2>
+
+            <div>
+                <div class="metricas">
+                    <p class="esquerda">Acurácia: </p>
+
+                    <p class="direita">10</p>
+                </div>
+
+                <div class="metricas">
+                    <p class="esquerda">Macro Average: </p>
+
+                    <p class="direita">10</p>
+                </div>
+
+                <div class="metricas">
+                    <p class="esquerda">F1-Score: </p>
+
+                    <p class="direita">10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="display_none"><i></i></section>
+
+        <section class="display_none">
+            <h2>Matriz de Confusão: </h2>
+
+            <div>
+                <img src="../static/images/figuraplot.png" alt="figuraplot">
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
