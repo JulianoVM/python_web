@@ -30,6 +30,22 @@ input:hover
     background-color: #8a8a8a;
 }
 
+select
+{
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: #fff solid 1px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+select:hover
+{
+    background-color: #8a8a8a;
+}
+
 h1
 {
     padding-top: 20px;

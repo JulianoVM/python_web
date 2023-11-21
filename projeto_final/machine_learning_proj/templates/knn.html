@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block classificador %}
+
+<form action="/classifier">
+    <input type="text" name="n_neighbors" placeholder="n_neighbors:    int, float or {'auto', 'sqrt', 'log2'}">
+    <input type="text" name="leaf_size" placeholder="leaf_size:    int">
+    <input type="submit" value="Calcular">
+</form>
+
+{% endblock %}

@@ -14,45 +14,23 @@
             <h2>Escolha o classificador:</h2>
 
             <div>
-                <form id="meu_form">
-                    <input list="classificadores">
-                    <datalist id="classificadores">
-                        <option value="KNN">
-                        <option value="MLP">
-                        <option value="DT">
-                        <option value="RF">
-                    </datalist>
+                <form action="/process" method="post" id="meu_form">
+                    <select name="classificadores" id="classificadores">
+                        <option value="KNN">KNN</option>
+                        <option value="MLP">MLP</option>
+                        <option value="DT">DT</option>
+                        <option value="RF">RF</option>
+                    </select>
                     <input type="submit" value="Escolher">
                 </form>
 
-                <div class="display_none" id="parameters">
-                    <div class="display_none" id="div_mlp">
-                        <input type="text" name="learning_rate_init" id="mlp" placeholder="learning_rate_init:    float">
-                        <input type="text" name="max_iter" id="mlp" placeholder="max_iter:    int">
-                        <input type="text" name="random_state" id="mlp" placeholder="random_state:    int">
-                    </div>
-
-                    <div class="display_none" id="div_rf">
-                        <input type="text" name="n_estimators" id="rf" placeholder="n_estimators:    int">
-                        <input type="text" name="max_leaf_nodes" id="rf" placeholder="max_leaf_nodes:    int">
-                        <input type="text" name="random_state" id="rf" placeholder="random_state:    int">
-                    </div>
-
-                    <div class="display_none" id="div_dt">
-                        <input type="text" name="max_depth" id="dt" placeholder="max_depth:    int">
-                        <input type="text" name="max_features" id="dt" placeholder="max_features:    ">
-                        <input type="text" name="random_state" id="dt" placeholder="random_state:    int">
-                    </div>
-
-                    <div class="display_none" id="div_knn">
-                        <input type="text" name="n_neighbors" id="knn" placeholder="n_neighbors:    int, float or {'auto', 'sqrt', 'log2'}">
-                        <input type="text" name="leaf_size" id="knn" placeholder="leaf_size:    int">
-                    </div>
-                </div>
+                {% block classificador %}
+                {% endblock %}
             </div>
 
             <h2>Métricas:</h2>
 
+            {% block metricas %}
             <div>
                 <div class="metricas">
                     <p class="esquerda">Acurácia: </p>
@@ -66,41 +44,21 @@
                     <p class="direita">{{ f1 }}</p>
                 </div>
             </div>
+            {% endblock %}
         </section>
 
+        {% block imagem %}
         <section class="display_none" id="divisor"><i></i></section>
 
         <section class="display_none" id="matriz_confusao">
             <h2>Matriz de Confusão: </h2>
 
             <div>
-                <img src="../static/images/figuraplot.png" alt="figuraplot">
+                
             </div>
         </section>
+        {% endblock %}
     </main>
 
-    <script>
-        document.getElementById('classificadores').addEventListener('change', function() {
-            var selectedClassifier = this.value;
-            if (selectedClassifier === 'KNN') {
-                document.getElementById('parameters').classList.remove('display_none');
-                document.getElementById('div_knn').classList.remove('display_none');
-            } else if (selectedClassifier === 'MLP') {
-                document.getElementById('parameters').classList.remove('display_none');
-                document.getElementById('div_mlp').classList.remove('display_none');
-            } else if (selectedClassifier == 'DT') {
-                document.getElementById('parameters').classList.remove('display_none');
-                document.getElementById('div_dt').classList.remove('display_none');
-            } else if (selectedClassifier == 'RF') {
-                document.getElementById('parameters').classList.remove('display_none');
-                document.getElementById('div_rf').classList.remove('display_none');
-            }
-        });
-
-        document.getElementById('meu_form').addEventListener('submit', function() {
-            document.getElementById('divisor').classList.remove('display_none');
-            document.getElementById('matriz_confusao').classList.remove('display_none');
-        });
-    </script>
 </body>
 </html>

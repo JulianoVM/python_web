@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block classificador %}
+
+<form action="/classifier">
+    <input type="text" name="n_estimators" placeholder="n_estimators:    int">
+    <input type="text" name="max_leaf_nodes" placeholder="max_leaf_nodes:    int">
+    <input type="text" name="random_state" placeholder="random_state:    int">
+    <input type="submit" value="Calcular">
+</form>
+
+{% endblock %}

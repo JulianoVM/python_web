@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block classificador %}
+
+<form action="/result/{{ classifier }}" method="post">
+    <input type="text" id="learning_rate_init" placeholder="learning_rate_init:    float">
+    <input type="text" id="max_iter" placeholder="max_iter:    int">
+    <input type="text" id="random_state" placeholder="random_state:    int">
+    <input type="submit" value="Calcular">
+</form>
+
+{% endblock %}
+
+{% block metricas %}
+
+    <div>
+        <div class="metricas">
+            <p class="esquerda">Acurácia: </p>
+            
+            <p class="direita">{{ accuracy }}</p>
+        </div>
+        
+        <div class="metricas">
+            <p class="esquerda">F1-Score: </p>
+            
+            <p class="direita">{{ f1 }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block imagem %}
+
+    <section id="divisor"><i></i></section>
+
+    <section id="matriz_confusao">
+        <h2>Matriz de Confusão: </h2>
+        
+        <div>
+            <img src="../static/images/matriz_confusao.png" alt="figuraplot">
+        </div>
+    </section>
+
+{% endblock %}

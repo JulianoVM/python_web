@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.datasets import load_iris
@@ -28,11 +29,11 @@ def mlp(indice_inicial_aprendizado, num_max_iter, num_random_state):
 
     display_mlp.plot()
     plt.figure(figsize=(6, 4))
-    # sns.heatmap(matriz_confusao, annot=True, cmap='Blues', fmt='g')
+    sns.heatmap(cm, annot=True, cmap='Blues', fmt='g')
     plt.xlabel('Previsão')
     plt.ylabel('Real')
     plt.title('Matriz de Confusão')
-    plt.savefig('caminho_especifico/matriz_confusao.png')  # Salvar a matriz de confusão em um caminho específico
+    plt.savefig('./static/images/matriz_confusao.png')
     plt.close()
 
-    return accuracy, f1, 
+    return accuracy, f1
