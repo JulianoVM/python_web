@@ -1,11 +1,63 @@
 {% extends "index.html" %}
 
+{% block select %}
+
+<form action="/result" method="post" id="meu_form">
+    <select name="classificadores" id="classificadores">
+        <option value="KNN" selected>KNN</option>
+        <option value="MLP">MLP</option>
+        <option value="DT">DT</option>
+        <option value="RF">RF</option>
+    </select>
+    <input type="submit" value="Escolher">
+</form>
+
+{% endblock %}
+
 {% block classificador %}
 
-<form action="/classifier">
+<form action="/result", method="post">
     <input type="text" name="n_neighbors" placeholder="n_neighbors:    int, float or {'auto', 'sqrt', 'log2'}">
     <input type="text" name="leaf_size" placeholder="leaf_size:    int">
     <input type="submit" value="Calcular">
+    <select class="display_none" name="classificadores" id="classificadores">
+        <option value="KNN" selected>KNN</option>
+        <option value="MLP">MLP</option>
+        <option value="DT" >DT</option>
+        <option value="RF">RF</option>
+    </select>
 </form>
+
+{% endblock %}
+
+{% block metricas %}
+
+    <div>
+        <div class="metricas">
+            <p class="esquerda">Acurácia: </p>
+            
+            <p class="direita">{{ accuracy }}</p>
+        </div>
+        
+        <div class="metricas">
+            <p class="esquerda">F1-Score: </p>
+            
+            <p class="direita">{{ f1 }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block imagem %}
+
+    <section id="divisor"><i></i></section>
+
+    <section id="matriz_confusao">
+        <h2>Matriz de Confusão: </h2>
+        
+        <div>
+            <img src="../images/matriz_confusao.png" alt="figuraplot">
+        </div>
+    </section>
 
 {% endblock %}

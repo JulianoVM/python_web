@@ -14,6 +14,7 @@
             <h2>Escolha o classificador:</h2>
 
             <div>
+                {% block select %}
                 <form action="/process" method="post" id="meu_form">
                     <select name="classificadores" id="classificadores">
                         <option value="KNN">KNN</option>
@@ -23,6 +24,7 @@
                     </select>
                     <input type="submit" value="Escolher">
                 </form>
+                {% endblock %}
 
                 {% block classificador %}
                 {% endblock %}

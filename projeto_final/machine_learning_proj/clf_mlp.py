@@ -32,8 +32,8 @@ def mlp(indice_inicial_aprendizado, num_max_iter, num_random_state):
     sns.heatmap(cm, annot=True, cmap='Blues', fmt='g')
     plt.xlabel('Previsão')
     plt.ylabel('Real')
-    plt.title('Matriz de Confusão')
-    plt.savefig('./static/images/matriz_confusao.png')
+    plt.title('Matriz de Confusão mlp')
+    plt.savefig('C:/Users/guias/OneDrive/Área de Trabalho/piton/python_web/projeto_final/machine_learning_proj/images/matriz_confusao.png')
     plt.close()
 
     return accuracy, f1

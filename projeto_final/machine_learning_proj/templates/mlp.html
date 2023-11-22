@@ -1,11 +1,31 @@
 {% extends "index.html" %}
 
+{% block select %}
+
+<form action="/result" method="post" id="meu_form">
+    <select name="classificadores" id="classificadores">
+        <option value="KNN">KNN</option>
+        <option value="MLP" selected>MLP</option>
+        <option value="DT">DT</option>
+        <option value="RF">RF</option>
+    </select>
+    <input type="submit" value="Escolher">
+</form>
+
+{% endblock %}
+
 {% block classificador %}
 
-<form action="/result/{{ classifier }}" method="post">
+<form action="/result" method="post">
     <input type="text" id="learning_rate_init" placeholder="learning_rate_init:    float">
     <input type="text" id="max_iter" placeholder="max_iter:    int">
     <input type="text" id="random_state" placeholder="random_state:    int">
+    <select class="display_none" name="classificadores" id="classificadores">
+        <option value="KNN">KNN</option>
+        <option value="MLP" selected>MLP</option>
+        <option value="DT">DT</option>
+        <option value="RF">RF</option>
+    </select>
     <input type="submit" value="Calcular">
 </form>
 
@@ -37,7 +57,7 @@
         <h2>Matriz de Confusão: </h2>
         
         <div>
-            <img src="../static/images/matriz_confusao.png" alt="figuraplot">
+            <img src="../images/matriz_confusao.png" alt="figuraplot">
         </div>
     </section>
 
